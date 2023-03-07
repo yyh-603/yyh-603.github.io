@@ -1,5 +1,5 @@
 ---
 title: {{ "[CSES]" }}
 date: {{ date }}
-tags: cses
+tags: 題解, cses
 ---

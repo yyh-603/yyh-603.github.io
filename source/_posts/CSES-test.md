@@ -2,7 +2,7 @@
 layout: cses
 title: CSES test
 date: 2023-03-07 11:50:21
-tags:
+tags: test1, tag2
 ---
 
 # CSES 1145
