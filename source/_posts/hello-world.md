@@ -36,3 +36,12 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+```c++
+#include<iostream>
+using namespace std;
+int main(){
+    cout << "Hello World\n";
+    return 0;
+}
+```
