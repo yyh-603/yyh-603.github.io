@@ -3,17 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: YiYang演算法隨筆
 subtitle: ''
 description: ''
-keywords:
-author: John Doe
-language: en
+keywords: 
+- 演算法
+- 演算法筆記
+- C++
+- CSES
+author: YiYang Hung
+language: zh-TW
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://yyh-603.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
