@@ -1,0 +1,10 @@
+search:
+  path: search.json
+  field: post
+  content: true
+  format: striptags
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
