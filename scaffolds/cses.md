@@ -1,16 +1,18 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+tags: 
 - CSES
+catagories: 
 - 題解
 mathjax: true
+excerpt: false
 ---
 
 
 ### 題目敘述
 
-題述text
+題述
 
 {% folding [orange]::[想法] %}
 

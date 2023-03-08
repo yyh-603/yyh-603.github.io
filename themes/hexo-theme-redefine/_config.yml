@@ -83,6 +83,12 @@ menu: #you can customize, i18n files are in the theme's languages folder. fa-reg
   Home: 
     path: / 
     icon: fa-regular fa-house # can be empty
+  Tags:
+    path: /tags
+    icon: 
+  Categories:
+    path: /categories
+    icon: 
   # Archives: 
   #   path: /archives 
   #   icon: fa-regular fa-archive # can be empty
