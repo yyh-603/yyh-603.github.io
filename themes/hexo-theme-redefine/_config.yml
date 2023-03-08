@@ -145,9 +145,9 @@ code_block:
   copy: true # enable code copy button
   style: simple # mac | simple
   custom_font: # custom font family, default: Ubuntu Mono
-    enable: false
-    font_family: # font family name
-    font_url: # font url
+    enable: true
+    font_family: Consolas # font family name
+    font_url: https://freefontsfamily.com/consolas-font-free-download/ # font url
 
 # ---------------------------------------------------------------------------------------
 # Table of Contents in the Sidebar
@@ -168,7 +168,7 @@ toc:
 # Post copyright info
 # ---------------------------------------------------------------------------------------
 copyright_info:
-  enable: true
+  enable: false
 
 # ---------------------------------------------------------------------------------------
 # Website count
