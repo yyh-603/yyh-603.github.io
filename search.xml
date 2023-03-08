@@ -41,8 +41,37 @@
 <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello World\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
   </entry>
   <entry>
-    <title>排序演算法</title>
-    <url>/2023/03/08/sorting/</url>
-    <content><![CDATA[<h3 id="氣泡排序法"><a href="#氣泡排序法" class="headerlink" title="氣泡排序法"></a>氣泡排序法</h3><h3 id="合併排序法"><a href="#合併排序法" class="headerlink" title="合併排序法"></a>合併排序法</h3>]]></content>
+    <title>遞迴</title>
+    <url>/2023/03/08/recursion/</url>
+    <content><![CDATA[<h3 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h3><p>為了將程式模組化，我們常會利用函式來簡化程式碼  </p>
+<p>C++中的函式宣告長這樣</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>{</span><br><span class="line">    <span class="type">int</span> ans = a + b;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+<p>下面將會介紹各區塊</p>
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>int sum </summary>
+              <div class="content">
+              <p>其中的int代表這個函式回傳值的類型，可為bool, int, long long, char, string等等，或者是不回傳，用void開頭</p><p>回傳值甚至可以是陣列或其他資料結構，但比較麻煩跟複雜，實際上比較不常用。</p><p>而sum則是這個函式的名稱，要注意不可以跟現有的關鍵字相同，否則會出現錯誤。</p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>(int a, int b) </summary>
+              <div class="content">
+              <p>a, b為傳入的參數，為這個函式的區域變數</p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>int ans = a + b; </summary>
+              <div class="content">
+              <p>函式內可以做的事情跟主程式一樣，可以輸入輸出、宣告變數等。</p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>return ans; </summary>
+              <div class="content">
+              <p>函式最後需要一個回傳值，須和一開始設定的相同  </p><p>若函式為void函式，可選擇不回傳或以下兩種方式結束函式</p><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">void</span>();</span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+<p>函式使用範例如下列程式</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>{</span><br><span class="line">    <span class="type">int</span> ans = a + b;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">sum</span>(x, y) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>]]></content>
   </entry>
 </search>

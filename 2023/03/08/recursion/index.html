@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yyh-603.github.io/2023/03/08/sorting/"/>
+    <link rel="canonical" href="https://yyh-603.github.io/2023/03/08/recursion/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="排序演算法">
+    <meta property="og:title" content="遞迴">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="https://yyh-603.github.io2023/03/08/sorting/">
+    <meta property="og:url" content="https://yyh-603.github.io2023/03/08/recursion/">
     <meta property="og:image" content="">
     <meta property="og:site_name" content="YiYang演算法隨筆">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="排序演算法">
+    <meta name="twitter:title" content="遞迴">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            排序演算法 -
+            遞迴 -
         
         YiYang演算法隨筆
     </title>
@@ -351,7 +351,7 @@ mjx-container[display="true"] + br {
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">排序演算法</h1>
+                    <h1 class="article-title-regular">遞迴</h1>
                 </div>
             
                 
@@ -378,8 +378,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-08 06:12:04</span>
-            <span class="mobile">2023-03-08 06:12</span>
+            <span class="pc">2023-03-08 07:12:08</span>
+            <span class="mobile">2023-03-08 07:12</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -390,7 +390,7 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>10 字數</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>315 字數</span>
         </span>
     
     
@@ -407,7 +407,36 @@ mjx-container[display="true"] + br {
             
 
             <div class="article-content markdown-body">
-                <h3 id="氣泡排序法"><a href="#氣泡排序法" class="headerlink" title="氣泡排序法"></a>氣泡排序法</h3><h3 id="合併排序法"><a href="#合併排序法" class="headerlink" title="合併排序法"></a>合併排序法</h3>
+                <h3 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h3><p>為了將程式模組化，我們常會利用函式來簡化程式碼  </p>
+<p>C++中的函式宣告長這樣</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>{</span><br><span class="line">    <span class="type">int</span> ans = a + b;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+<p>下面將會介紹各區塊</p>
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>int sum </summary>
+              <div class="content">
+              <p>其中的int代表這個函式回傳值的類型，可為bool, int, long long, char, string等等，或者是不回傳，用void開頭</p><p>回傳值甚至可以是陣列或其他資料結構，但比較麻煩跟複雜，實際上比較不常用。</p><p>而sum則是這個函式的名稱，要注意不可以跟現有的關鍵字相同，否則會出現錯誤。</p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>(int a, int b) </summary>
+              <div class="content">
+              <p>a, b為傳入的參數，為這個函式的區域變數</p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>int ans = a + b; </summary>
+              <div class="content">
+              <p>函式內可以做的事情跟主程式一樣，可以輸入輸出、宣告變數等。</p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>return ans; </summary>
+              <div class="content">
+              <p>函式最後需要一個回傳值，須和一開始設定的相同  </p><p>若函式為void函式，可選擇不回傳或以下兩種方式結束函式</p><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">void</span>();</span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+<p>函式使用範例如下列程式</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>{</span><br><span class="line">    <span class="type">int</span> ans = a + b;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">sum</span>(x, y) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
             </div>
 
             
@@ -447,8 +476,8 @@ mjx-container[display="true"] + br {
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此頁目錄</div>
-        <div class="page-title">排序演算法</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%A3%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%B3%95"><span class="nav-text">氣泡排序法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E4%BD%B5%E6%8E%92%E5%BA%8F%E6%B3%95"><span class="nav-text">合併排序法</span></a></li></ol>
+        <div class="page-title">遞迴</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E5%BC%8F"><span class="nav-text">函式</span></a></li></ol>
 
     </div>
 </div>
