@@ -106,10 +106,10 @@ theme: hexo-theme-redefine
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: https://github.com/yyh-603/yyh-603.github.io
+  type: 
+  repo: 
   # example, https://github.com/hexojs/hexojs.github.io
-  branch: gh-pages
+  branch: 
 
 mathjax:
   tags: none               # or 'ams' or 'all'
