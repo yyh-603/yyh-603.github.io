@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://yyh-603.github.io/2023/03/08/function/"/>
+    <link rel="canonical" href="https://yyh-603.github.io/2023/07/31/cses-1069/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="函式">
+    <meta property="og:title" content="CSES 1069">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="https://yyh-603.github.io2023/03/08/function/">
+    <meta property="og:url" content="https://yyh-603.github.io2023/07/31/CSES-1069/">
     <meta property="og:image" content="">
     <meta property="og:site_name" content="YiYang演算法隨筆">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="函式">
+    <meta name="twitter:title" content="CSES 1069">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            函式 -
+            CSES 1069 -
         
         YiYang演算法隨筆
     </title>
@@ -351,7 +351,7 @@ mjx-container[display="true"] + br {
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">函式</h1>
+                    <h1 class="article-title-regular">CSES 1069</h1>
                 </div>
             
                 
@@ -371,26 +371,37 @@ mjx-container[display="true"] + br {
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-03-08 14:09:20</span>
-        <span class="mobile">2023-03-08 14:09</span>
+        <span class="pc">2023-07-31 10:48:41</span>
+        <span class="mobile">2023-07-31 10:48</span>
         <span class="hover-info">撰寫</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-08 15:10:26</span>
-            <span class="mobile">2023-03-08 15:10</span>
+            <span class="pc">2023-08-01 15:12:28</span>
+            <span class="mobile">2023-08-01 15:12</span>
             <span class="hover-info">更新</span>
         </span>
     
 
     
     
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/CSES/">CSES</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>399 字數</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>156 字數</span>
         </span>
     
     
@@ -407,46 +418,30 @@ mjx-container[display="true"] + br {
             
 
             <div class="article-content markdown-body">
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>想像一下，如果一件事情要在程式裡面一直重複，要如何寫呢</p>
-<blockquote>
-<p>重複貼很多次？</p>
-</blockquote>
-<p>或許不是個好方法。這樣的缺點是會讓程式變很長，並且難以找到錯誤。</p>
-<p>所以，我們常會利用函式來簡化程式碼  </p>
-<p>函式可以將重複的事情包裝起來，增加程式的可讀性</p>
-<h3 id="寫法"><a href="#寫法" class="headerlink" title="寫法"></a>寫法</h3><p>C++中的函式宣告長這樣</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>{</span><br><span class="line">    <span class="type">int</span> ans = a + b;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
-<p>下面將會介紹各區塊的寫法及用途</p>
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>int sum </summary>
+                <h3 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h3><p>題目會給一個DNA序列(即一個只含ATCG的字串)，找出最長的一段連續序列，這段序列只含一種字母，輸出這段字串的長度。</p>
+<details class="[orange]"><summary><i class="fa-solid fa-chevron-right"></i>[想法] </summary>
               <div class="content">
-              <p>其中的int代表這個函式回傳值的類型，可為bool, int, long long, char, string等等，或者是不回傳，用void開頭</p><p>回傳值甚至可以是陣列或其他資料結構，但比較麻煩跟複雜，實際上比較不常用。</p><p>而sum則是這個函式的名稱，要注意不可以跟現有的關鍵字相同，否則會出現錯誤。</p>
+              <p>把每個字母與前一個字母比對，紀錄包含當前字母最長符合條件字串的長度。</p>
               </div>
             </details>
 
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>(int a, int b) </summary>
+<details class="[blue]"><summary><i class="fa-solid fa-chevron-right"></i>[程式碼] </summary>
               <div class="content">
-              <p>a, b為傳入的參數，為這個函式的區域變數</p>
+              <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    <span class="type">int</span> n = s.<span class="built_in">length</span>();</span><br><span class="line">    <span class="type">int</span> mx = <span class="number">1</span>, ans = <span class="number">1</span>;</span><br><span class="line">    <span class="type">char</span> last = s[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;n; i++){</span><br><span class="line">        <span class="keyword">if</span>(s[i] == last)</span><br><span class="line">            mx++;</span><br><span class="line">        <span class="keyword">else</span>{</span><br><span class="line">            last = s[i];</span><br><span class="line">            mx = <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, mx);</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
               </div>
             </details>
-
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>int ans = a + b; </summary>
-              <div class="content">
-              <p>函式內可以做的事情跟主程式一樣，可以輸入輸出、宣告變數等。</p>
-              </div>
-            </details>
-
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>return ans; </summary>
-              <div class="content">
-              <p>函式最後需要一個回傳值，須和一開始設定的相同  </p><p>若函式為void函式，可選擇不回傳或以下兩種方式結束函式</p><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">void</span>();</span><br></pre></td></tr></table></figure></div>
-              </div>
-            </details>
-
-<p>函式使用範例如下列程式</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>{</span><br><span class="line">    <span class="type">int</span> ans = a + b;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">sum</span>(x, y) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
             </div>
 
             
 
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/CSES/">#CSES</a>&nbsp;
+                        </li>
+                    
+                </ul>
             
 
             
@@ -457,13 +452,13 @@ mjx-container[display="true"] + br {
                         <div class="article-prev">
                             <a class="prev"
                             rel="prev"
-                            href="/2023/03/08/hello-world/"
+                            href="/2023/07/31/CSES-1094/"
                             >
                                 <span class="left arrow-icon flex-center">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">Hello World</span>
+                                    <span class="post-nav-title-item">CSES 1094</span>
                                     <span class="post-nav-item">上一篇</span>
                                 </span>
                             </a>
@@ -473,10 +468,10 @@ mjx-container[display="true"] + br {
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/03/08/recursion/"
+                            href="/2023/07/26/CSES-1083/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">遞迴</span>
+                                    <span class="post-nav-title-item">CSES1083</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -497,8 +492,8 @@ mjx-container[display="true"] + br {
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此頁目錄</div>
-        <div class="page-title">函式</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%AB%E6%B3%95"><span class="nav-text">寫法</span></a></li></ol>
+        <div class="page-title">CSES 1069</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0"><span class="nav-text">題目敘述</span></a></li></ol>
 
     </div>
 </div>
